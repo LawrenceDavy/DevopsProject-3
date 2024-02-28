@@ -1,4 +1,4 @@
-# DevopsProject-3-Kubernetes
+# DevopsProject-3
 
 In this project I wanted to try a deeper dive into the world Kubernetes, since it is alot more popular than Cloudformation, is cross-platform and I just wanted a challenge using microservices. Well thats exactly what I got. 
 <br>
