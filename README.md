@@ -1,24 +1,31 @@
-# DevopsProject-3
+# DevOps Project 3 — EKS, Helm and CI/CD Lab
 
-In this project I wanted to try a deeper dive into the world Kubernetes, since it is alot more popular than Cloudformation, is cross-platform and I just wanted a challenge using microservices. Well thats exactly what I got. 
-<br>
-So first, I tried to building my Kubernetes cluster from scratch. The Ansible and Packer configuration was straight forward, although the Terraform part was challenging. This is then I realised why most companies decide to let their cloud providers handle their clusters. The amount of setup that Kubernetes requires by Terraform, for creating non-EKS clusters and for setting Gitlab CI is huge and since this was my first project involving Terraform, I got to lost in the weeds and honestly didn't know what I was doing.
-<br>
-In the end, I ended up using Eksctl to create and manage the clusters. What took hours of setup, now only took 20 minutes or so and with that, I managed to complete the pipeline for this project.
-<br>
-As much head banging as their was in creating this project, it was fun and appreciated how powerful Kubernetes.
-<br>
-I do plan to create an alternative project, with the setup involving Terraform and using either Kustomize or Kubernetes Operators for provisioning the application. Since I don't plan on giving up on the progress I made during my first attempt. 
-<br>
-BONUS: Will update this project adding Velero disater recovery tool.
+In this project I explored deploying a containerised application to Kubernetes on AWS and connecting the deployment steps into a CI/CD workflow.
 
+My original plan involved building more of the Kubernetes infrastructure using Terraform. I found that approach too complicated for this stage of learning, so I changed to **eksctl** to provision the EKS cluster and continued with Helm and GitLab CI/CD. I documented this change because it was part of the learning process.
 
-Tools included:
+**Status:** Historical hands-on project. These notes have not been re-tested against current AWS, EKS or GitLab versions; they should not be treated as a production-ready deployment.
 
-- OS - Ubuntu 22.04 - WSL2 Windows 10
-- Git - Local version control system
-- Gitlab - Continuous integration tool
-- Docker - Containerization
-- Kubernetes - Container management
-- Helm - Kubernetes package management
-- AWS - Cloud
+## Tools used
+
+AWS EKS, eksctl, Docker, Kubernetes, Helm, GitLab CI/CD and Ubuntu/WSL2.
+
+## Project sections
+
+- [EKS cluster setup with eksctl](1.%20Eksctl/)
+- [Helm](2.%20Helm/)
+- [CI/CD workflow and deployment notes](3.%20CICD/)
+
+## What I learned
+
+- The difference between assembling a cluster from many individual components and using a managed cloud service
+- How container images, Helm charts and a CI/CD pipeline fit into deployment
+- Why a working learning environment is not automatically a secure, repeatable production environment
+
+## Limitations
+
+- Some steps depend on old cloud/tool versions or resources that may no longer exist.
+- There is no claim that this can be deployed unchanged today.
+- I would add version pinning, secret handling, more deployment validation and recovery testing before using this approach in a real environment.
+
+I kept the original project notes and structure so the decisions, challenges and progress remain visible.
